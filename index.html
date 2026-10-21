@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lesedi Tutoring | Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand logo-brand" href="index.html" aria-label="Lesedi Tutoring Academy home"><img src="lesedi-logo.png" alt="Lesedi Tutoring Academy — Tutoring Services logo"></a>
+    <a class="header-site-name" href="index.html" aria-label="Lesedi Tutoring Academy home">Lesedi Tutoring Academy</a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="services.html">Services & Fees</a>
+      <a href="booking.html">Book a Session</a>
+      <a href="contact.html">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+    </nav>
+  </header>
+
+  <div class="partnership-note">An independent learning initiative in partnership with <strong>T-Tech Industries</strong></div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARN WITH CONFIDENCE</p>
+        <p class="site-slogan">Progress in Process</p>
+        <h1>Small steps today.<br><span>Brighter results tomorrow.</span></h1>
+        <p class="lead">Friendly, focused tutoring in Mathematics and Physical Sciences for learners who are ready to grow.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="booking.html">Enquire about lessons <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="services.html">Explore our services</a>
+        </div>
+        <div class="trust-row"><span class="trust-icon">✓</span> Supportive learning <span class="trust-icon">✓</span> Online sessions available</div>
+      </div>
+      <div class="hero-art">
+        <img src="lesedi-learner-study.jpg" alt="Learner studying Mathematics with a geometry worksheet, representing Lesedi Tutoring Academy’s focused tutoring support">
+        <div class="floating-note"><strong>One goal at a time</strong><span>Build skills. Build confidence.</span></div>
+      </div>
+    </section>
+
+    <hr class="soft-rule">
+
+    <section class="section-pad" aria-labelledby="about-heading">
+      <div class="section-heading">
+        <p class="eyebrow">A LITTLE ABOUT US</p>
+        <h2 id="about-heading">Learning that meets you where you are.</h2>
+        <p>Lesedi Tutoring Academy helps learners strengthen their understanding, practise important concepts and feel more prepared for class and assessments.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon lavender">01</div>
+          <h3>Clear explanations</h3>
+          <p>Break challenging topics into manageable steps and practise until the method makes sense.</p>
+          <a href="services.html">See subject support <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon mint">02</div>
+          <h3>Flexible learning</h3>
+          <p>Attend in person in Mohlakeng and surrounding communities, or ask about online sessions.</p>
+          <a href="booking.html">Ask about a session <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon peach">03</div>
+          <h3>Simple monthly fees</h3>
+          <p>Choose Mathematics, Physical Sciences, or a combined option with straightforward monthly pricing.</p>
+          <a href="services.html#fees">View the fee table <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="callout section-pad">
+      <div><p class="eyebrow">READY TO GET STARTED?</p><h2>Your next learning step starts here.</h2><p>Send an enquiry and let us know which subject you would like help with.</p></div>
+      <a class="button button-light" href="booking.html">Make an enquiry <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">B</span><span>Lesedi <small>Tutoring Academy</small></span></a><p>Progress in Process</p><p class="copyright">© 2026 Lesedi Tutoring Academy</p></footer>
+
+<script>
+(function () {
+  const key = 'lesedi-theme';
+  const root = document.documentElement;
+  const button = document.querySelector('.theme-toggle');
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    if (button) {
+      const dark = theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = button.querySelector('.theme-icon');
+      const label = button.querySelector('.theme-label');
+      if (icon) icon.textContent = dark ? '☀' : '☾';
+      if (label) label.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+  }
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  if (button) button.addEventListener('click', function () {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

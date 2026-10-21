@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Session | Lesedi Tutoring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand logo-brand" href="index.html" aria-label="Lesedi Tutoring Academy home"><img src="lesedi-logo.png" alt="Lesedi Tutoring Academy — Tutoring Services logo"></a>
+    <a class="header-site-name" href="index.html" aria-label="Lesedi Tutoring Academy home">Lesedi Tutoring Academy</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Fees</a>
+      <a class="active" href="booking.html">Book a Session</a>
+      <a href="contact.html">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+    </nav>
+  </header>
+
+  <div class="partnership-note">An independent learning initiative in partnership with <strong>T-Tech Industries</strong></div>
+
+  <main>
+    <section class="page-banner compact-banner">
+      <p class="eyebrow">BOOKING & ENQUIRIES</p>
+      <h1>Let’s plan your <span>next step.</span></h1>
+      <p>Complete the form below and tell us what kind of support you need.</p>
+    </section>
+
+    <section class="booking-layout section-pad">
+      <aside class="booking-aside">
+        <div class="aside-icon">✦</div>
+        <h2>Start with a question.</h2>
+        <p>Not sure which package is right for you? Send an enquiry and we can discuss the available options.</p>
+        <hr>
+        <h3>Good to know</h3>
+        <p><strong>Session length</strong><br>2 hours per session</p>
+        <p><strong>Learning format</strong><br>In person or online</p>
+        <p><strong>Service area</strong><br>Mohlakeng and surrounding communities</p>
+      </aside>
+
+      <form class="enquiry-form" action="mailto:jontuks@outlook.com" method="post" enctype="text/plain">
+        <div class="form-heading"><h2>Enquiry form</h2><p>Fields marked with * are required.</p></div>
+        <div class="form-grid">
+          <div class="form-field"><label for="full-name">Full name *</label><input id="full-name" name="Full name" type="text" placeholder="e.g. Thabo Mokoena" autocomplete="name" required></div>
+          <div class="form-field"><label for="email">Email address *</label><input id="email" name="Email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div class="form-field"><label for="phone">Contact number *</label><input id="phone" name="Contact number" type="tel" placeholder="073 000 0000" autocomplete="tel" required></div>
+          <div class="form-field"><label for="start-date">Preferred start date</label><input id="start-date" name="Preferred start date" type="date"></div>
+          <fieldset class="form-field full-width"><legend>Which subject(s) do you need? *</legend><div class="choice-row"><label class="choice"><input type="checkbox" name="Subjects" value="Mathematics"> Mathematics</label><label class="choice"><input type="checkbox" name="Subjects" value="Physical Sciences"> Physical Sciences</label><label class="choice"><input type="checkbox" name="Subjects" value="Life Sciences"> Life Sciences</label><label class="choice"><input type="checkbox" name="Subjects" value="Economic Management Science (EMS)"> Economic Management Science (EMS)</label><label class="choice"><input type="checkbox" name="Subjects" value="English"> English</label><label class="choice"><input type="checkbox" name="Subjects" value="Life Orientation (LO)"> Life Orientation (LO)</label><label class="choice"><input type="checkbox" name="Subjects" value="Business Studies"> Business Studies</label></div></fieldset>
+          <fieldset class="form-field full-width"><legend>Preferred session format *</legend><div class="choice-row"><label class="choice"><input type="radio" name="Format" value="In person" required> In person</label><label class="choice"><input type="radio" name="Format" value="Online"> Online</label></div></fieldset>
+          <div class="form-field full-width"><label for="package">Package of interest</label><select id="package" name="Package"><option value="">Choose a package</option><option>Mathematics — R300/month</option><option>Physical Sciences — R300/month</option><option>Mathematics and Physical Sciences — R400/month</option><option>Life Sciences — R400/month</option><option>Economic Management Science (EMS) — R400/month</option><option>English — R400/month</option><option>Life Orientation (LO) — R400/month</option><option>Business Studies — R400/month</option><option>Not sure yet — please advise</option></select></div>
+          <div class="form-field full-width"><label for="message">Tell us a little more</label><textarea id="message" name="Message" rows="5" placeholder="Which grade or topics would you like help with?"></textarea></div>
+        </div>
+        <div class="form-actions"><button class="button button-primary" type="submit">Submit enquiry <span aria-hidden="true">→</span></button><button class="button button-outline" type="reset">Reset form</button></div>
+        <p class="form-note">Submitting opens your default email application with the enquiry details. If it does not open, email us directly at <a href="mailto:jontuks@outlook.com">jontuks@outlook.com</a>.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">B</span><span>Lesedi <small>Tutoring Academy</small></span></a><p>Progress in Process</p><p class="copyright">© 2026 Lesedi Tutoring Academy</p></footer>
+
+<script>
+(function () {
+  const key = 'lesedi-theme';
+  const root = document.documentElement;
+  const button = document.querySelector('.theme-toggle');
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    if (button) {
+      const dark = theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = button.querySelector('.theme-icon');
+      const label = button.querySelector('.theme-label');
+      if (icon) icon.textContent = dark ? '☀' : '☾';
+      if (label) label.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+  }
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  if (button) button.addEventListener('click', function () {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

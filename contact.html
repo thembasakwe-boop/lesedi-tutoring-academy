@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Lesedi Tutoring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand logo-brand" href="index.html" aria-label="Lesedi Tutoring Academy home"><img src="lesedi-logo.png" alt="Lesedi Tutoring Academy — Tutoring Services logo"></a>
+    <a class="header-site-name" href="index.html" aria-label="Lesedi Tutoring Academy home">Lesedi Tutoring Academy</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services & Fees</a>
+      <a href="booking.html">Book a Session</a>
+      <a class="active" href="contact.html">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+    </nav>
+  </header>
+
+  <div class="partnership-note">An independent learning initiative in partnership with <strong>T-Tech Industries</strong></div>
+
+  <main>
+    <section class="page-banner">
+      <p class="eyebrow">WE’RE HERE TO HELP</p>
+      <h1>Get in <span>touch.</span></h1>
+      <p>Reach out with questions about lessons, fees or online learning.</p>
+    </section>
+
+    <section class="contact-layout section-pad">
+      <div class="contact-intro">
+        <p class="eyebrow">CONTACT DETAILS</p>
+        <h2>A friendly first step can make a difference.</h2>
+        <p>We welcome enquiries from learners and families in Mohlakeng and surrounding communities. Contact us during office hours or send an email at any time.</p>
+        <a class="button button-primary" href="booking.html">Open enquiry form <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="contact-cards">
+        <article class="contact-card"><div class="contact-icon">☎</div><div><h3>Call us</h3><p>For questions about sessions and availability.</p><a href="tel:+27731598094">073 159 8094</a></div></article>
+        <article class="contact-card"><div class="contact-icon">@</div><div><h3>Email us</h3><p>Send your questions or request more information.</p><a href="mailto:jontuks@outlook.com">jontuks@outlook.com</a></div></article>
+        <article class="contact-card"><div class="contact-icon">◷</div><div><h3>Office hours</h3><p>Monday–Friday</p><strong>08:30–17:30</strong></div></article>
+        <article class="contact-card"><div class="contact-icon">⌖</div><div><h3>Service area</h3><p>Mohlakeng and surrounding communities</p><strong>Online sessions also available</strong></div></article>
+      </div>
+    </section>
+
+    <section class="contact-bottom section-pad">
+      <div><p class="eyebrow">TAKE THE NEXT STEP</p><h2>Tell us what you want to work on.</h2><p>Choose your subjects and preferred format in our booking enquiry form.</p></div>
+      <a class="button button-light" href="booking.html">Book or enquire <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">B</span><span>Lesedi <small>Tutoring Academy</small></span></a><p>Progress in Process</p><p class="copyright">© 2026 Lesedi Tutoring Academy</p></footer>
+
+<script>
+(function () {
+  const key = 'lesedi-theme';
+  const root = document.documentElement;
+  const button = document.querySelector('.theme-toggle');
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    if (button) {
+      const dark = theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = button.querySelector('.theme-icon');
+      const label = button.querySelector('.theme-label');
+      if (icon) icon.textContent = dark ? '☀' : '☾';
+      if (label) label.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+  }
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  if (button) button.addEventListener('click', function () {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>

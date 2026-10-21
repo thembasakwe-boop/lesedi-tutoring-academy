@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services & Fees | Lesedi Tutoring</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand logo-brand" href="index.html" aria-label="Lesedi Tutoring Academy home"><img src="lesedi-logo.png" alt="Lesedi Tutoring Academy — Tutoring Services logo"></a>
+    <a class="header-site-name" href="index.html" aria-label="Lesedi Tutoring Academy home">Lesedi Tutoring Academy</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="services.html">Services & Fees</a>
+      <a href="booking.html">Book a Session</a>
+      <a href="contact.html">Contact</a>
+    <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+    </nav>
+  </header>
+
+  <div class="partnership-note">An independent learning initiative in partnership with <strong>T-Tech Industries</strong></div>
+
+  <main>
+    <section class="page-banner">
+      <p class="eyebrow">OUR SERVICES</p>
+      <h1>Practical support for<br><span>stronger understanding.</span></h1>
+      <p>Choose the subject combination that suits your learning goals and budget.</p>
+    </section>
+
+    <section class="content-layout section-pad">
+      <div class="service-copy">
+        <p class="eyebrow">WHAT TO EXPECT</p>
+        <h2>Make every lesson count.</h2>
+        <p>Sessions focus on understanding key concepts, working through examples and building confidence through practice. Each session lasts <strong>2 hours</strong>.</p>
+        <h3>Our subject options</h3>
+        <ul class="check-list">
+          <li><span>✓</span> Mathematics support</li>
+          <li><span>✓</span> Physical Sciences support</li>
+          <li><span>✓</span> Combined Mathematics and Physical Sciences</li>
+          <li><span>✓</span> Online sessions are available</li>
+        </ul>
+        <p>For best results, bring your schoolwork, questions and any topics you would like to revisit.</p>
+      </div>
+      <figure class="service-image">
+        <img src="study-illustration.svg" alt="Books and school supplies symbolising Mathematics and Physical Sciences tutoring">
+        <figcaption>A focused, supportive space to learn at your pace.</figcaption>
+      </figure>
+    </section>
+
+    <section id="fees" class="section-pad fees-section">
+      <div class="section-heading">
+        <p class="eyebrow">CLEAR MONTHLY PRICING</p>
+        <h2>Services and fees</h2>
+        <p>Monthly subject packages are listed below. Please enquire to confirm a suitable timetable.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Monthly tutoring packages</caption>
+          <thead><tr><th scope="col">Package</th><th scope="col">What is included</th><th scope="col">Monthly fee</th></tr></thead>
+          <tbody>
+            <tr><td>Mathematics</td><td>Mathematics tutoring</td><td class="price">R300</td></tr>
+            <tr><td>Physical Sciences</td><td>Physical Sciences tutoring</td><td class="price">R300</td></tr>
+            <tr><td>Mathematics and Physical Sciences</td><td>Combined Mathematics and Physical Sciences tutoring</td><td class="price">R400</td></tr>
+            <tr><td>Life Sciences</td><td>Life Sciences tutoring</td><td class="price">R400</td></tr>
+            <tr><td>Economic Management Science (EMS)</td><td>EMS tutoring</td><td class="price">R400</td></tr>
+            <tr><td>English</td><td>English tutoring</td><td class="price">R400</td></tr>
+            <tr><td>Life Orientation (LO)</td><td>Life Orientation tutoring</td><td class="price">R400</td></tr>
+            <tr><td>Business Studies</td><td>Business Studies tutoring</td><td class="price">R400</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-card"><span class="note-symbol">i</span><p><strong>Session information</strong><br>Each session is 2 hours. Standard sessions are planned across 5 days a week. Online sessions can be arranged. Contact us to confirm your schedule and package details.</p></div>
+      <a class="button button-primary" href="booking.html">Enquire about availability <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><span class="brand-mark">B</span><span>Lesedi <small>Tutoring Academy</small></span></a><p>Progress in Process</p><p class="copyright">© 2026 Lesedi Tutoring Academy</p></footer>
+
+<script>
+(function () {
+  const key = 'lesedi-theme';
+  const root = document.documentElement;
+  const button = document.querySelector('.theme-toggle');
+  function applyTheme(theme) {
+    root.dataset.theme = theme;
+    if (button) {
+      const dark = theme === 'dark';
+      button.setAttribute('aria-pressed', String(dark));
+      button.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      const icon = button.querySelector('.theme-icon');
+      const label = button.querySelector('.theme-label');
+      if (icon) icon.textContent = dark ? '☀' : '☾';
+      if (label) label.textContent = dark ? 'Light mode' : 'Dark mode';
+    }
+  }
+  let saved = null;
+  try { saved = localStorage.getItem(key); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  if (button) button.addEventListener('click', function () {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem(key, next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
